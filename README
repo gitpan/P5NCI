@@ -1,0 +1,42 @@
+P5NCI
+=====
+
+0.10 - Sat May  6 22:56:32 UTC 2006
+
+P5NCI provides a means of loading shared libraries and calling their functions
+from Perl without writing any glue code -- or compiling any XS, besides what
+you compile when you install this module.
+
+It doesn't support structs yet.  That's difficult to do easily, at least if you
+want to manipulate their contents.
+
+INSTALLATION
+
+To install this module:
+
+   $ perl Build.PL
+   $ perl ./Build
+   $ perl ./Build test
+   $ sudo ./Build install
+
+You can also use the Makefile, though I don't recommend it.
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+	DynaLoader (core, to run)
+
+	Math::BaseCalc       (to build, no kidding)
+	Module::Builder      (to build)
+	ExtUtils::CBuilder   (to build)
+
+	Test::Simple    0.47 (to test)
+	Test::Exception 0.19 (to test)
+
+COPYRIGHT AND LICENCE
+
+Copyright (c) 2004, 2006 chromatic.
+
+This library is free software; you can redistribute it and/or modify it under
+the same terms as Perl 5.8.x itself, specifically Perl version 5.8.5.

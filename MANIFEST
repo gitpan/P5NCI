@@ -1,0 +1,16 @@
+Build.PL
+build_lib/P5NCI/Build.pm
+build_lib/P5NCI/GenerateXS.pm
+Changes
+lib/P5NCI.pm
+lib/P5NCI.xs
+lib/P5NCI/Library.pm
+Makefile.PL
+MANIFEST
+META.yml
+README
+lib/ppport.h
+src/nci_test.c
+t/library.t
+t/P5NCI.t
+t/P5NCI_simple.t
