@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use vars '$VERSION';
-$VERSION = '0.10';
+$VERSION = '0.20';
 
 use Carp 'croak';
 
@@ -64,8 +64,8 @@ P5NCI - Perl extension for loading shared libraries and their functions
   use P5NCI;
 
   # find and load a shared library in a cross-platform fashion
-  my $library      = P5NCI::find_lib( 'nci_test' );
-  my $library_path = P5NCI::load_lib( $library_path );
+  my $library_path = P5NCI::find_lib( 'nci_test' );
+  my $library      = P5NCI::load_lib( $library_path );
 
   # load a function from the shared library
   my $double_func  = P5NCI::load_func( $library, 'double_double', 'dd' );
@@ -120,17 +120,19 @@ currently working signature items are:
 
 =over
 
-=item C<i>, an integer
+=item C<d>, a double
 
 =item C<f>, a float
 
-=item C<d>, a double
+=item C<i>, an integer
+
+=item C<p>, a pointer (read-only for now, so be careful)
 
 =item C<s>, a short
 
 =item C<t>, a string
 
-=item C<v>, void (nothing)
+=item C<v>, void (nothing), valid only as an output type, not an input type
 
 =back
 
@@ -149,6 +151,8 @@ chromatic, E<lt>chromatic at wgz dot orgE<gt>.
 
 Based on Parrot's NCI by Dan Sugalski, Leo Toetsch, and a host of other people
 including me (a little bit, here and there).
+
+Thanks to Bill Ricker for documentation fixes and other suggestions.
 
 =head1 BUGS
 

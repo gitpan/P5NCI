@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdio.h>
 
 double double_double( double d );
 float  double_float(  float  f );
@@ -9,6 +10,17 @@ char * change_string( char *p );
 float  square_root(   float x );
 
 int multiply_ints( int x, int y );
+
+typedef struct _some_struct
+{
+	int    x;
+	double y;
+} some_struct;
+
+some_struct* make_struct();
+void set_x_value( some_struct *s, int x );
+int  get_x_value( some_struct *s );
+void free_struct( some_struct *s );
 
 double double_double( double d )
 {
@@ -45,4 +57,27 @@ char* change_string( char *p )
 float square_root( float x )
 {
 	return sqrt( x );
+}
+
+some_struct* make_struct ()
+{
+	some_struct *s = malloc( sizeof( some_struct ) );
+	return s;
+}
+
+void set_x_value ( some_struct *s, int x )
+{
+	s->x = x;
+	return;
+}
+
+int  get_x_value ( some_struct *s )
+{
+	return s->x;
+}
+
+void free_struct ( some_struct *s )
+{
+	free( s );
+	return;
 }

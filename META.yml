@@ -1,6 +1,6 @@
 ---
 name: P5NCI
-version: 0.10
+version: 0.20
 author: []
 abstract: Perl extension for loading shared libraries and their functions
 license: perl
@@ -14,11 +14,11 @@ build_requires:
 provides:
   P5NCI:
     file: lib/P5NCI.pm
-    version: 0.10
+    version: 0.20
   P5NCI::Library:
     file: lib/P5NCI/Library.pm
-    version: 0.10
-generated_by: Module::Build version 0.2709
+    version: 0.20
+generated_by: Module::Build version 0.28
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

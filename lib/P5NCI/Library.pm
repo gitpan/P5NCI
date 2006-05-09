@@ -5,7 +5,7 @@ use warnings;
 
 use P5NCI;
 use vars '$VERSION';
-$VERSION = '0.10';
+$VERSION = '0.20';
 
 use Carp 'croak';
 
