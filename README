@@ -1,11 +1,14 @@
 P5NCI
 =====
 
-0.20 - Tue May  9 07:53:06 UTC 2006
+0.30 - Fri Jun 30 21:33:41 UTC 2006
 
 P5NCI provides a means of loading shared libraries and calling their functions
 from Perl without writing any glue code -- or compiling any XS, besides what
 you compile when you install this module.
+
+Version 0.30 adds the wonderful P5NCI::Declare with almost no syntax required
+to bind to functions.
 
 Version 0.20 adds support for sending and receiving opaque pointers to and from NCI functions.  Don't modify them.  They're opaque.
 
@@ -26,7 +29,6 @@ This module requires these other modules and libraries:
 
 	DynaLoader (core, to run)
 
-	Math::BaseCalc       (to build, no kidding)
 	Module::Builder      (to build)
 	ExtUtils::CBuilder   (to build)
 

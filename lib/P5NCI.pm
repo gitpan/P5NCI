@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use vars '$VERSION';
-$VERSION = '0.20';
+$VERSION = '0.30';
 
 use Carp 'croak';
 
@@ -153,6 +153,8 @@ Based on Parrot's NCI by Dan Sugalski, Leo Toetsch, and a host of other people
 including me (a little bit, here and there).
 
 Thanks to Bill Ricker for documentation fixes and other suggestions.
+
+Thanks to Norman Nunley for pair programming to help fix the generation code.
 
 =head1 BUGS
 

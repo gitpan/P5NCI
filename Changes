@@ -1,5 +1,12 @@
 Revision history for Perl extension P5NCI.
 
+0.30 Fri Jun 30 21:37:32 UTC 2006
+	- rewrote thunk parameter generator with Norman Nunley (now more complete)
+	- added P5NCI::Declare
+
+0.20  Tue May 9 2006
+	- added pointer support
+
 0.10  Sat May  6 22:54:15 UTC 2006
 	- fixed float argument mangling bug on x86 (should fix other platforms)
 	- attempted to reduce memory use with DynaLoader tricks

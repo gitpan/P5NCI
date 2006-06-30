@@ -17,8 +17,6 @@ package P5NCI::GenerateXS;
 use strict;
 use warnings;
 
-use Math::BaseCalc;
-
 sub generate_xs
 {
 	my $out_file = shift;
@@ -55,7 +53,6 @@ sub write_thunks
 	{
 		# void makes no sense as anything other than return value or all args
 		next if index( $combo, 'v', 2 ) > 0;
-		next if $combo      =~ /.v.+/;
 
 		my ($return, @args) = map { $args->{ $_ } } split('', $combo);
 		my $func            = generate_function( "nci_$combo", $return, @args );
@@ -66,22 +63,34 @@ sub write_thunks
 sub generate_combinations
 {
 	my @possibilities = @_;
-	my $length        = @possibilities;
-	my $counter       = 0;
-	my $current_len   = 2;
-	my $max_len       = 5;
-	my $base_calc     = Math::BaseCalc->new( digits => [ 0 .. $length - 1 ] );
+
+	return generate_iterator( 2, 5, \@possibilities );
+}
+
+sub generate_iterator
+{
+	my ($from, $to, $items) = @_;
+	my @prefix              = (0) x $from;
 
 	return sub
 	{
-		my $num      = $base_calc->to_base( $counter );
-		my $position = sprintf( "%0${current_len}d", $num );
-		$counter++;
+		return if @prefix > $to;
+		my $ret = join( '', map { $items->[ $_ ] } @prefix );
 
-		$current_len++ if $position eq $length x $max_len;
-		return if length( $position ) > $max_len;
+		# increment counter rightward
+		my $i = 0;
+		while ( ++$prefix[$i] > $#{ $items } )
+		{
+			$prefix[$i] = 0;
+			$i++;
+			if ( $i == @prefix )
+			{
+				@prefix = ( ( 0 ) x ( @prefix + 1 ) );
+				last;
+			}
+		}
 
-		return join( '', map { $possibilities[ $_ ] } split(//, $position ) );
+		return $ret;
 	};
 }
 

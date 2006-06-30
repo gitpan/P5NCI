@@ -13,7 +13,6 @@ my $build = P5NCI::Build->new(
 	xs_files       => { 'lib/P5NCI.xs' => 'lib/P5NCI.xs' },
 	build_requires =>
 	{
-		'Math::BaseCalc'     => '0.00',
 		'ExtUtils::CBuilder' => '0.03',
 		'Test::Exception'    => '0.19',
 		'Test::Simple'       => '0.47',
