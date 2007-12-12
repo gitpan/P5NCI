@@ -19,8 +19,11 @@ my $lib = P5NCI::Library->new(
 ok( $lib->isa( $module ), 'test library should be loadable' ) or exit;
 
 my  $double_double = $lib->load_function( 'double_double', 'dd' );
-is( $double_double->( 1.0 ),  2.0, 'dd call should work'  );
-is( $double_double->( 3.14 ), 6.28, '... for multiple calls' );
+
+my $result         = $double_double->( 1.0 ) - 2.0;
+cmp_ok( $result,  '<', 0.0001, 'dd call should work'  );
+$result            = $double_double->( 3.14 ) - 6.28;
+cmp_ok( $result,  '<', 0.0001, '... for multiple calls'  );
 
 my  $double_int = $lib->install_function( 'double_int', 'ii' );
 is( $double_int->( 1 ), 2, 'ii call should work' );

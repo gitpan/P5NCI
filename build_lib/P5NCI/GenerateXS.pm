@@ -64,7 +64,7 @@ sub generate_combinations
 {
 	my @possibilities = @_;
 
-	return generate_iterator( 2, 5, \@possibilities );
+	return generate_iterator( 2, 4, \@possibilities );
 }
 
 sub generate_iterator
@@ -158,8 +158,11 @@ sub write_header
 
 	print $out <<END_HERE;
 #include "EXTERN.h"
-#include "perl.h"
 #include "XSUB.h"
+#include "perl.h"
+#ifdef PERL_UNUSED_DECL
+    #undef PERL_UNUSED_DECL
+#endif
 #include "ppport.h"
 
 #ifdef newXS

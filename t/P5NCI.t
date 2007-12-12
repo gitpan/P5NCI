@@ -14,8 +14,10 @@ my $lib_path       = P5NCI::find_lib( 'nci_test' );
 my $double_lib     = P5NCI::load_lib( $lib_path  );
 ok( $double_lib, 'test library should be loadable' ) or exit;
 my  $double_double = P5NCI::load_func( $double_lib, 'double_double', 'dd' );
-is( $double_double->( 1.0 ),  2.0, 'dd call should work'  );
-is( $double_double->( 3.14 ), 6.28, '... for multiple calls' );
+my $result         = $double_double->( 1.0 ) - 2.0;
+cmp_ok( $result,  '<', 0.0001, 'dd call should work'  );
+$result            = $double_double->( 3.14 ) - 6.28;
+cmp_ok( $result,  '<', 0.0001, '... for multiple calls'  );
 
 my  $double_int = P5NCI::load_func( $double_lib, 'double_int', 'ii' );
 is( $double_int->( 1 ), 2, 'ii call should work' );

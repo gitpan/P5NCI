@@ -3,7 +3,6 @@ build_lib/P5NCI/Build.pm
 build_lib/P5NCI/GenerateXS.pm
 Changes
 lib/P5NCI.pm
-lib/P5NCI.xs
 lib/P5NCI/Library.pm
 lib/P5NCI/Declare.pm
 Makefile.PL

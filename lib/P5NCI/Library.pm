@@ -6,7 +6,7 @@ use warnings;
 use P5NCI;
 
 use vars '$VERSION';
-$VERSION = '0.30';
+$VERSION = '0.31';
 
 use Carp 'croak';
 
@@ -174,7 +174,7 @@ No known bugs.  Several known limitations.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2004, 2006 chromatic.  All rights reserved.
+Copyright (c) 2004, 2006 - 2007, chromatic.  All rights reserved.
 
 This module is free software; you can use, redistribute, and modify it under
 the same terms as Perl 5.8.x.

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use vars '$VERSION';
-$VERSION = '0.30';
+$VERSION = 0.31;
 
 use Carp 'croak';
 
@@ -168,7 +168,7 @@ though it depends on how well your platform manages shared libraries.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2004, 2006 chromatic.
+Copyright (c) 2004, 2006 - 2007, chromatic.
 
 This library is free software; you can redistribute it and/or modify it under
 the same terms as Perl 5.8.x.

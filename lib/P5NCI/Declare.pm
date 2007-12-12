@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use vars '$VERSION';
-$VERSION = '0.30';
+$VERSION = '0.31';
 
 use P5NCI::Library;
 
@@ -67,7 +67,7 @@ No known bugs.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2006, chromatic.  Some rights reserved.
+Copyright (c) 2006 - 2007, chromatic.  Some rights reserved.
 
 This module is free software; you can use, redistribute, and modify it under
-the same terms as Perl 5.8.
+the same terms as Perl 5.8.x.
